@@ -1,1 +1,0 @@
-{'DIR_DST': '../Projecte_S-J_L-M/sergioooooo', 'MIDA_PETITA': '17', 'MIDA_MITJANA': '20', 'EXTENSION_FILTRADA': ['pdf', 'txt', 'bin']}
