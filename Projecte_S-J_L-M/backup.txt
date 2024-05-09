@@ -1,0 +1,13 @@
+def Carregar_config():
+    global configuracion,extension
+    archivo = input('Introduce el nombre del archivo: ')
+    try:
+        with open(archivo, 'r') as file:
+            contenido = file.read()
+            if archivo.endswith('.txt'):
+                print('Contenido del archivo', archivo, ':')
+            else:
+                print('No se puede abrir el archivo',archivo)
+            print(contenido)
+    except FileNotFoundError:
+        print('El archivo', archivo, 'no existe.')
