@@ -1,1 +1,0 @@
-{'DIR_INIT': '../Projecte_S-J_L-M/sergio_init', 'DIR_DST': '../Projecte_S-J_L-M/sergio', 'MIDA_PETITA': 5120, 'MIDA_MITJANA': 12288, 'EXTENSION_FILTRADA': ['pdf', 'exe', 'bin']}
