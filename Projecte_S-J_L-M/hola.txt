@@ -1,0 +1,1 @@
+{'DIR_INIT': '../Projecte_S-J_L-M/HOLA', 'DIR_DST': '../Projecte_S-J_L-M/sergio', 'MIDA_PETITA': 5120, 'MIDA_MITJANA': 12288, 'EXTENSION_FILTRADA': ['pdf', 'exe', 'bin'], 'DIR_QUARANTENA': '../Projecte_S-J_L-M/quarentena', 'ZIP_FILE': 'zip_file'}

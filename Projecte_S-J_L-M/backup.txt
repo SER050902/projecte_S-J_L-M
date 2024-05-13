@@ -1,0 +1,56 @@
+    with open(config) as f:
+        configuracio = eval(f.read())
+
+    DIR_INIT = configuracio["DIR_INIT"]
+    DIR_DST = configuracio["DIR_DST"]
+    MIDA_PETITA = configuracio["MIDA_PETITA"]
+    MIDA_MITJANA = configuracio["MIDA_MITJANA"]
+
+    for ruta, cuerpo, ficheros in os.walk(DIR_INIT):
+        for fichero in ficheros:
+            file_path = os.path.join(ruta, fichero)
+            propietario_uid = os.stat(file_path).st_uid
+            propietario_nombre = pwd.getpwuid(propietario_uid).pw_name
+            size = os.path.getsize(file_path)
+            print("Archivo:", fichero, 'con la ruta', ruta, 'con tamaño de', size, 'con propietario', propietario_nombre)
+
+            # Convertir tamaño de bytes a kilobytes
+            size_kb = size / 1024
+
+            if size_kb < MIDA_PETITA:
+                destino = "petita"
+            elif MIDA_PETITA <= size_kb < MIDA_MITJANA:
+                destino = "mitja"
+            else:
+                destino = "gran"
+
+            destino_directorio = os.path.join(DIR_DST, propietario_nombre, destino,fichero)
+
+            shutil.copy(file_path, destino_directorio)
+            print('Moviendo', fichero, 'a', destination_directory)
+
+
+
+
+                with open(config) as f:
+        configuracio = eval(f.read())
+
+    DIR_INIT = configuracio["DIR_INIT"]
+    FILTRADA = configuracio["EXTENSION_FILTRADA"]
+    DIR_QUARANTENA = configuracio["DIR_QUARANTENA"]
+
+    for ruta, cuerpo, ficheros in os.walk(DIR_INIT):
+        for fichero in ficheros:
+            file_path = os.path.join(ruta, fichero)
+            filtrar = os.path.basename(file_path)
+
+            if filtrar.split('.')[1] in FILTRADA:
+                os.makedirs(os.path.dirname(DIR_QUARANTENA), exist_ok=True)
+                if DIR_QUARANTENA:
+                    shutil.copy(file_path,DIR_QUARANTENA)
+            else:
+                print('Ya tienes filtrado')
+
+
+                os.makedirs(DIR_QUARANTENA,exist_ok=True)
+                os.mkdir(dir_path)
